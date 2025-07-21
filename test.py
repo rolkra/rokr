@@ -34,5 +34,5 @@ out = pl.DataFrame({
 })
 
 out
-out.filter(pl.col('type') == pl.Float64)
+out.filter(pl.col('type') == "Float64")
 
