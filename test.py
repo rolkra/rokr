@@ -56,15 +56,17 @@ def use_data_beer() -> pl.DataFrame:
     data = pl.read_csv("data/beer.csv", has_header=True, separator=",")
     return data
 
-df = use_data_beer()
-describe(df)
-
-def use_data_penguins() -> pl.DataFrame:
-    data = pl.read_csv("data/penguins.csv", has_header=True, separator=",")
+def use_data_buy() -> pl.DataFrame:
+    data = pl.read_csv("data/buy.csv", has_header=True, separator=",")
     return data
 
-df = use_data_penguins()
-describe(df)
+def use_data_diamonds() -> pl.DataFrame:
+    data = pl.read_csv("data/diamonds.csv", has_header=True, separator=",")
+    return data
+
+def use_data_esoteric() -> pl.DataFrame:
+    data = pl.read_csv("data/esoteric.csv", has_header=True, separator=",")
+    return data
 
 def use_data_iris() -> pl.DataFrame:
     data = pl.read_csv("data/iris.csv", has_header=True, separator=",")
@@ -76,15 +78,21 @@ def use_data_iris() -> pl.DataFrame:
         "Species": "species"})
     return data
 
-df = use_data_iris()
-describe(df)
-
-def use_data_buy() -> pl.DataFrame:
-    data = pl.read_csv("data/buy.csv", has_header=True, separator=",")
+def use_data_mpg() -> pl.DataFrame:
+    data = pl.read_csv("data/mpg.csv", has_header=True, separator=",")
     return data
 
-df = use_data_buy()
-describe(df)
+def use_data_mtcars() -> pl.DataFrame:
+    data = pl.read_csv("data/mtcars.csv", has_header=True, separator=",")
+    return data
+
+def use_data_penguins() -> pl.DataFrame:
+    data = pl.read_csv("data/penguins.csv", has_header=True, separator=",")
+    return data
+
+def use_data_starwars() -> pl.DataFrame:
+    data = pl.read_csv("data/starwars.csv", has_header=True, separator=",")
+    return data
 
 def use_data_titanic() -> pl.DataFrame:
     data = pl.read_csv("data/titanic.csv", has_header=True, separator=",")
@@ -95,19 +103,19 @@ def use_data_titanic() -> pl.DataFrame:
         "Survived": "survived"})
     return data
 
-df = use_data_titanic()
-describe(df)
-
 def use_data_wordle() -> pl.DataFrame:
     data = pl.read_csv("data/wordle.csv", has_header=True, separator=",")
     return data
 
-df = use_data_wordle()
-describe(df)
+describe(use_data_beer())
+describe(use_data_buy())
+describe(use_data_diamonds())
+describe(use_data_esoteric())
+describe(use_data_iris())
+describe(use_data_mpg())
+describe(use_data_mtcars())
+describe(use_data_penguins())
+describe(use_data_starwars())
+describe(use_data_titanic())
+describe(use_data_wordle())
 
-def use_data_esoteric() -> pl.DataFrame:
-    data = pl.read_csv("data/esoteric.csv", has_header=True, separator=",")
-    return data
-
-df = use_data_esoteric()
-describe(df)
