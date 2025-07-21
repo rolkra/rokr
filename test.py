@@ -58,3 +58,23 @@ def use_data_beer() -> pl.DataFrame:
 
 df = use_data_beer()
 describe(df)
+
+def use_data_penguins() -> pl.DataFrame:
+    data = pl.read_csv("data/penguins.csv", has_header=True, separator=",")
+    return data
+
+df = use_data_penguins()
+describe(df)
+
+def use_data_iris() -> pl.DataFrame:
+    data = pl.read_csv("data/iris.csv", has_header=True, separator=",")
+    data = data.rename({
+        "Sepal.Length": "sepal_legth",
+        "Sepal.Width": "sepal_width",
+        "Petal.Length": "petal_length",
+        "Petal.Width": "petal_width",
+        "Species": "species"})
+    return data
+
+df = use_data_iris()
+describe(df)
