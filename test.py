@@ -78,3 +78,36 @@ def use_data_iris() -> pl.DataFrame:
 
 df = use_data_iris()
 describe(df)
+
+def use_data_buy() -> pl.DataFrame:
+    data = pl.read_csv("data/buy.csv", has_header=True, separator=",")
+    return data
+
+df = use_data_buy()
+describe(df)
+
+def use_data_titanic() -> pl.DataFrame:
+    data = pl.read_csv("data/titanic.csv", has_header=True, separator=",")
+    data = data.rename({
+        "Class": "class",
+        "Sex": "gender",
+        "Age": "age",
+        "Survived": "survived"})
+    return data
+
+df = use_data_titanic()
+describe(df)
+
+def use_data_wordle() -> pl.DataFrame:
+    data = pl.read_csv("data/wordle.csv", has_header=True, separator=",")
+    return data
+
+df = use_data_wordle()
+describe(df)
+
+def use_data_esoteric() -> pl.DataFrame:
+    data = pl.read_csv("data/esoteric.csv", has_header=True, separator=",")
+    return data
+
+df = use_data_esoteric()
+describe(df)
