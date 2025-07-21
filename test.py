@@ -52,3 +52,9 @@ out = describe(df)
 out
 out.filter(pl.col('type') == "Float64")
 
+def use_data_beer() -> pl.DataFrame:
+    data = pl.read_csv("data/beer.csv", has_header=True, separator=",")
+    return data
+
+df = use_data_beer()
+describe(df)
