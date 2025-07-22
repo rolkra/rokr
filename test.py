@@ -11,7 +11,9 @@ df = pl.DataFrame(data)
 df.filter(pl.col('success') == 1)
 
 def describe(df: pl.DataFrame) -> pl.DataFrame:
-
+    """Return a Polars data frame with description of all variables in data.
+    (each variable is in one row)
+    """
     description_pl = df.describe()
     df_rows = df.shape[0]
     df_cols = df.shape[1]
@@ -53,22 +55,32 @@ out
 out.filter(pl.col('type') == "Float64")
 
 def use_data_beer() -> pl.DataFrame:
+    """Return a Polars data frame (beer data)
+    """
     data = pl.read_csv("data/beer.csv", has_header=True, separator=",")
     return data
 
 def use_data_buy() -> pl.DataFrame:
+    """Return a Polars data frame (buy data)
+    """
     data = pl.read_csv("data/buy.csv", has_header=True, separator=",")
     return data
 
 def use_data_diamonds() -> pl.DataFrame:
+    """Return a Polars data frame (diamonds data)
+    """
     data = pl.read_csv("data/diamonds.csv", has_header=True, separator=",")
     return data
 
 def use_data_esoteric() -> pl.DataFrame:
+    """Return a Polars data frame (esoteric data)
+    """
     data = pl.read_csv("data/esoteric.csv", has_header=True, separator=",")
     return data
 
 def use_data_iris() -> pl.DataFrame:
+    """Return a Polars data frame (iris data)
+    """
     data = pl.read_csv("data/iris.csv", has_header=True, separator=",")
     data = data.rename({
         "Sepal.Length": "sepal_legth",
@@ -79,22 +91,32 @@ def use_data_iris() -> pl.DataFrame:
     return data
 
 def use_data_mpg() -> pl.DataFrame:
+    """Return a Polars data frame (mpg data)
+    """
     data = pl.read_csv("data/mpg.csv", has_header=True, separator=",")
     return data
 
 def use_data_mtcars() -> pl.DataFrame:
+    """Return a Polars data frame (mtcars data)
+    """
     data = pl.read_csv("data/mtcars.csv", has_header=True, separator=",")
     return data
 
 def use_data_penguins() -> pl.DataFrame:
+    """Return a Polars data frame (penguins data)
+    """
     data = pl.read_csv("data/penguins.csv", has_header=True, separator=",")
     return data
 
 def use_data_starwars() -> pl.DataFrame:
+    """Return a Polars data frame (starwars data)
+    """
     data = pl.read_csv("data/starwars.csv", has_header=True, separator=",")
     return data
 
 def use_data_titanic() -> pl.DataFrame:
+    """Return a Polars data frame (titanic data)
+    """
     data = pl.read_csv("data/titanic.csv", has_header=True, separator=",")
     data = data.rename({
         "Class": "class",
@@ -104,6 +126,8 @@ def use_data_titanic() -> pl.DataFrame:
     return data
 
 def use_data_wordle() -> pl.DataFrame:
+    """Return a Polars data frame (wordle data)
+    """
     data = pl.read_csv("data/wordle.csv", has_header=True, separator=",")
     return data
 
